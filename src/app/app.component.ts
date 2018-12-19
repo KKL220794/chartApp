@@ -9,6 +9,7 @@ import { WeatherService } from './weather.service';
 
 export class AppComponent implements OnInit {
   title = 'chartAPP';
+  dataset: object[];
 
   ngOnInit() {}
 }

@@ -1,5 +1,5 @@
 import { Chart } from 'chart.js';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { WeatherService } from '../weather.service';
 
 @Component({
@@ -20,17 +20,16 @@ export class ChartComponent implements OnInit {
   constructor(private _weather: WeatherService) {}
 
   ngOnInit() {
-    this._weather.dailyForecast()
-      .subscribe(res => {
-        this.data = res.json();
+    this._weather.dailyForecast();
+    this._weather.updatedData.subscribe(
+      (res) => { this.data = res;
+        console.log(this.data);
+
         this.genderCount();
         this.genderChart();
         this.relationshipCount();
         this.relationshipChart();
-
-
-      }
-      );
+      } );
   }
   genderCount() {
 

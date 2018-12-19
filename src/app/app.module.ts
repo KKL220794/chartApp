@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import 'rxjs';
 import { ChartComponent } from './chart/chart.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartComponent
+    ChartComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
