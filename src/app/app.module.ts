@@ -1,4 +1,3 @@
-import { WeatherService } from './weather.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import 'rxjs';
 import { ChartComponent } from './chart/chart.component';
 import { FilterComponent } from './filter/filter.component';
+import { ServerService } from './Sever.service';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,9 @@ import { FilterComponent } from './filter/filter.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule, NgxPaginationModule
   ],
-  providers: [WeatherService],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

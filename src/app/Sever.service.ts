@@ -7,14 +7,14 @@ import { async } from '@angular/core/testing';
 @Injectable({
   providedIn: 'root'
 })
-export class WeatherService {
+export class ServerService {
 
   data: object[] = [];
   updatedData = new Subject<object[]>();
 
   constructor(private _http: Http) { }
 
-  dailyForecast() {
+  getData() {
     return this._http.get('/src/dataset1.json').subscribe(
       res => {
         this.data = res.json();

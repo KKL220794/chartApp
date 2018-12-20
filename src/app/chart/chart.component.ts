@@ -1,6 +1,6 @@
 import { Chart } from 'chart.js';
 import { Component, OnInit, Output } from '@angular/core';
-import { WeatherService } from '../weather.service';
+import {  ServerService } from '../Sever.service';
 
 @Component({
   selector: 'app-chart',
@@ -17,11 +17,11 @@ export class ChartComponent implements OnInit {
   chart1 = []; // This will hold our chart info
   chart2 = []; // This will hold our chart info
 
-  constructor(private _weather: WeatherService) {}
+  constructor(private _sservice: ServerService) {}
 
   ngOnInit() {
-    this._weather.dailyForecast();
-    this._weather.updatedData.subscribe(
+    this._sservice.getData();
+    this._sservice.updatedData.subscribe(
       (res) => { this.data = res;
         console.log(this.data);
 
