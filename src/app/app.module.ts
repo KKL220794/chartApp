@@ -1,8 +1,10 @@
+import { FilterPipe } from './filter.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import 'rxjs';
 import { ChartComponent } from './chart/chart.component';
 import { FilterComponent } from './filter/filter.component';
@@ -13,10 +15,12 @@ import {NgxPaginationModule} from 'ngx-pagination';
   declarations: [
     AppComponent,
     ChartComponent,
-    FilterComponent
+    FilterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule, NgxPaginationModule
   ],
   providers: [ServerService],

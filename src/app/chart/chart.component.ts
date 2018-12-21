@@ -23,7 +23,7 @@ export class ChartComponent implements OnInit {
     this._sservice.getData();
     this._sservice.updatedData.subscribe(
       (res) => { this.data = res;
-        console.log(this.data);
+        // console.log(this.data);
 
         this.genderCount();
         this.genderChart();
